@@ -7,7 +7,12 @@
 </head>
 <body>
     <h1 class="main-title">Fire Chat App!</h1>
-    <button id="increment-button">+1</button>
+    <form id="message-form">
+        Message : <input type="text" name="message">
+        <button id="submit-button">Submit</button>
+    </form>
+
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/chat.js"></script>
 </body>
