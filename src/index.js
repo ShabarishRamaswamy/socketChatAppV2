@@ -25,6 +25,10 @@ io.on('connection', (socket)=>{
     socket.on('disconnect', ()=>{
         io.emit('message', 'A User has left')
     })
+
+    socket.on('userLocation', (position)=>{
+        socket.broadcast.emit('message', `User is in ${position.latitude} and ${position.longitude}`)
+    })
 })
 
 server.listen(PORT, ()=>{
