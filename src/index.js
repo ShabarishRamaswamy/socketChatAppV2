@@ -36,7 +36,7 @@ io.on('connection', (socket)=>{
         if(!position){
             return callback('Location Was not Sent')
         }
-        socket.broadcast.emit('message', `https://www.google.com/maps/@${position.latitude},${position.longitude}`)
+        socket.broadcast.emit('message', `https://www.google.com/maps/q?${position.latitude},${position.longitude}`)
         callback()
     })
 })
