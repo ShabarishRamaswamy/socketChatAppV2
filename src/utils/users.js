@@ -33,13 +33,13 @@ const addUser = ({ id, username, room }) => {
 }
 
 const removeUser = (id) =>{
-    const index = users.findIndex((user)=> user.id === id)  
-
+    var index = users.findIndex((user) => user.id === id)
     if(index != -1){
-        return {
-            username: index.name,
-            room: index.room,
-            id: index.id
+        return { 
+            username: users[index].username,
+            room: users[index].room,
+            id: users[index].id,
+            spliced: users.splice(index, 1)
         }
     }else {
         return undefined
